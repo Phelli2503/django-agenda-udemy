@@ -1,0 +1,23 @@
+[33mcommit af535aeecbbede72f9173287aa4b2e16ea166781[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin1/main[m[33m)[m
+Author: Paulo Sérgio Costa Filho <paulserg_03@hotmail.com>
+Date:   Tue Oct 29 16:46:21 2024 -0300
+
+    Models
+
+[33mcommit e589645a87ff4ee4c5f587902e9be44714e6aab9[m
+Author: Paulo Sérgio Costa Filho <paulserg_03@hotmail.com>
+Date:   Tue Oct 29 11:52:14 2024 -0300
+
+    Pastas base de templates e staticos
+
+[33mcommit fa48beacbbffa2d1101b7532829b7dc3f2fb3390[m
+Author: Paulo Sérgio Costa Filho <paulserg_03@hotmail.com>
+Date:   Tue Oct 29 11:00:06 2024 -0300
+
+    Criando o app contact no django
+
+[33mcommit 3b96058ebf6e281b56b2d72244729681b19dc45b[m
+Author: Paulo Sérgio Costa Filho <paulserg_03@hotmail.com>
+Date:   Tue Oct 29 10:36:02 2024 -0300
+
+    Initial
