@@ -8,8 +8,13 @@ class ContactAdmin(admin.ModelAdmin):
     ordering = '-id', # Order
     list_filter = 'created_date', # Filtrar
     search_fields = 'id','first_name','last_name', # Pesquisar
-    list_per_page = 10 #paginação
+    list_per_page = 150 #paginação
     list_max_show_all = 100 # limite do mostrar tudo
     list_editable = 'phone', # editar sem abrir
     list_display_links = 'first_name', # links 
     
+@admin.register(models.Category)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = 'name',
+    ordering = '-id',
+
