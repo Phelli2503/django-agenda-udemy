@@ -14,7 +14,7 @@ class ContactAdmin(admin.ModelAdmin):
     list_display_links = 'first_name', # links 
     
 @admin.register(models.Category)
-class ContactAdmin(admin.ModelAdmin):
+class CategoryAdmin(admin.ModelAdmin):
     list_display = 'name',
     ordering = '-id',
 

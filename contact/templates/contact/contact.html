@@ -1,0 +1,36 @@
+{% extends "global/base.html" %}
+
+{% block content %}
+<div class="single-contact">
+    <h1 class="single-contact-name">
+        {{ contact.first_name}} {{ contact.last_name}}
+    </h1>
+
+    <p><b>ID: </b>{{ contact.id }}</p>
+    <p><b>E-MAIL: </b>{{ contact.email }}</p>
+    <p><b>PHONE: </b>{{ contact.phone }}</p>
+    <p><b>CREATED DATE: </b>{{ contact.created_date }}</p>
+    <p><b>DESCRIPTION: </b>{{ contact.description }}</p>
+    <p><b>CATEGORY: </b>{{ contact.category.name }}</p>
+
+    {% if contact.picture %}
+    <p>
+        <img src=" {{ contact.picture.url }} " alt="{{ contact.first_name }} {{ contact.last_name }}">
+    </p>
+    {% endif %}
+    <div class="contacts-links">
+        <a class="btn btn-link" href="{% url 'contact:update' contact.id %}">ATUALIZAR INFORMAÇÕES</a>
+        
+        <form method="POST" action="{% url 'contact:delete' contact.id %}">
+          {% csrf_token %}
+            {% if confirmation == 'no' %}
+            <input type="hidden" name="confirmation" value="yes">
+            <button style="background: tomato;" class="btn btn-link btn-delete" type="submit">CONFIRMAR?</button>
+            {% else %}
+            <button style="background: tomato;" class="btn btn-link btn-delete" type="submit">DELETAR</button>
+            {% endif %}
+        </form>
+        
+    </div>
+</div>
+{% endblock content %}

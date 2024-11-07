@@ -1,0 +1,59 @@
+{% extends "global/base.html" %}
+
+{% block content %}
+
+<div class="form-wrapper">
+    <h1>CRIAR CONTATO</h1>
+    <form action="{{ form_action }}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-content">
+            {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                
+                {% if field.errors %}
+                {% comment %} <div class="message error"> {% endcomment %}
+                    {% for error in field.errors %}
+                        <p style="color: red">{{ error }}</p>
+                    {% endfor %}
+                {% comment %} </div> {% endcomment %}
+                {% endif %}
+                
+                {% if field.help_text %}
+                    <small>{{ field.help_text }}</small>
+                {% endif %}
+            </div>
+                {% if field.name == 'picture' and field.value.url %}
+                <div class="form-group">
+                <img style='max-width:25%' src='{{ field.value.url }}' alt='' >
+                </div>
+                {% endif %}
+
+           
+            {% endfor %}
+        
+
+        {% if form.non_field_errors %}
+        <div class="form-content">
+            <div class="form-group">
+                <div class="message error">
+                    {% for error in form.non_field_errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="form-content">
+            <div class="form-group">
+                <button class="btn" type="submit">CADASTRAR</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+{% endblock content %}

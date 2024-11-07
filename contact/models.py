@@ -16,12 +16,12 @@ class Category(models.Model):
 
 # Qualquer coisa que mudar no model, executar o comando: python manage.py makemigrations
 class Contact(models.Model):
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50, blank=True) # pode ficar em branco
-    phone = models.CharField(max_length=50)
-    email = models.EmailField(max_length=254)
+    first_name = models.CharField(max_length=50, verbose_name="NOME")
+    last_name = models.CharField(max_length=50, blank=True, verbose_name="SOBRENOME") # pode ficar em branco
+    phone = models.CharField(max_length=50, verbose_name="TELEFONE")
+    email = models.EmailField(max_length=254 , verbose_name="E-MAIL")
     created_date = models.DateTimeField(default=timezone.now())
-    description = models.TextField(blank=True)
+    description = models.TextField(blank=True, verbose_name="DESCRIÇÃO")
     
     show = models.BooleanField(default=True) # Se precisa mostrar
     picture = models.ImageField(blank=True, upload_to='pictures/%Y/%m/')
