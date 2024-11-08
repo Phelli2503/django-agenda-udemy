@@ -18,6 +18,8 @@
         <img src=" {{ contact.picture.url }} " alt="{{ contact.first_name }} {{ contact.last_name }}">
     </p>
     {% endif %}
+    {% comment %} VERIFICAR SE O CONTATO É PERTENCENTE AO LOGADO {% endcomment %}
+    {% if user == contact.owner %}
     <div class="contacts-links">
         <a class="btn btn-link" href="{% url 'contact:update' contact.id %}">ATUALIZAR INFORMAÇÕES</a>
         
@@ -29,8 +31,10 @@
             {% else %}
             <button style="background: tomato;" class="btn btn-link btn-delete" type="submit">DELETAR</button>
             {% endif %}
+
         </form>
         
     </div>
+    {% endif %}
 </div>
 {% endblock content %}
